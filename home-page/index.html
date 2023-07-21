@@ -4,53 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuarkLink</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> -->
     <link rel="icon" type="image/x-icon" href="https://cryptoquantique.github.io/home-page/imgs/favicon.ico">
 
     <style>
-
         /* Extra small devices (phones, 600px and down) */
         @media only screen and (max-width: 600px) {
-            body {
-                background-color: yellow;
+            html {
+                font-size: 10px;
+            }
+            .content {
+                overflow-x: hidden;
+                overflow-y: scroll;
             }
             .laptop__wrapper {
                 display: none;
+                height: 70%;
             }
             .cards__wrapper {
-                width: 86vw;
-                margin-right: 5vw;
-                box-sizing: border-box;
+                width: 100vw;
+                padding: 0 1rem;
             }
+            .cards__section {
+                width: calc(100% - 1rem);
+            }
+            /* .card--lg {
+                width: 100%;
+            } */
             .card--lg {
-                width: 100%;
+                padding: 2rem 4.5rem;
+                width: 92vw;
             }
-
+            .price {
+                padding: 2rem 1rem;
+            }
             .card--sm {
-                width: 100%;
-                width: 12rem;
+                width: 45%;
+            }
+            .footer {
+                padding: 2rem 0;
+                position: fixed;
+                bottom: 0;
+                width: 95vw;
             }
         }
 
         /* Small devices (portrait tablets and large phones, 600px and up) */
         @media only screen and (min-width: 600px) {
-            body {
-                background-color: blue;
+            html {
+                font-size: 16px;
             }
             .laptop__wrapper {
                 display: none;
+                height: 70%;
+            }
+            .cards__section {
+                width: calc(100% - 1rem);
             }
             .card--sm {
-            width: 9rem;
+                width: 18rem;
+            }
+            .card--lg {
+                padding: 2rem 4.5rem;
+            }
+            .footer {
+                padding: 2rem;
+                width: 100vw;
             }
         }
 
         /* Medium devices (landscape tablets, 768px and up) */
         @media only screen and (min-width: 768px) {
-            body {
-                background-color: red;
+            .laptop__wrapper {
+                display: block;
+                height: 100%;
+            }
+            .laptop__image {
+                height: 27rem;
+                float: left;
+                transform: translateX(32rem);
+            }
+            .price {
+                padding: 1rem 0.5rem;
+            }
+            .cards__wrapper {
+                width: 60vw;
+            }
+            .card--lg {
+                padding: 2rem 2rem;
+            }
+            .card--sm {
+                width: 11rem;
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 960px) {
+            .content {
+                padding-left: 4rem;
+                padding-right: 4rem;
             }
             .laptop__wrapper {
                 display: block;
@@ -60,33 +111,107 @@
                 float: left;
                 transform: translateX(30rem);
             }
-            .card--lg {
-                padding: 2rem 2.5rem;
+            .cards__wrapper {
+                width: 55vw;
             }
-            
+            .card--lg {
+                padding: 2rem 3.5rem;
+            }
+            .card--sm {
+                width: 7rem;
+            }
+            .price {
+                padding: 1rem 1rem;
+            }
+            .footer {
+                padding: 2rem;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
         }
 
-        /* Large devices (laptops/desktops, 992px and up) */
-        @media only screen and (min-width: 992px) {
-            body {
-                background-color: gray;
+        @media only screen and (min-width: 1080px) {
+            .cards__wrapper {
+                width: 60vw;
             }
-
             .card--lg {
                 padding: 2rem 4.5rem;
+            }
+            .card--sm {
+                width: 9rem;
             }
             
         }
 
         /* Extra large devices (large laptops and desktops, 1200px and up) */
-        @media only screen and (min-width: 1200px) {
-            body {
-                background-color: rgb(153,50,204);
+        @media only screen and (min-width: 1400px) {
+            .content {
+                padding-left: 6rem;
+                padding-right: 6rem;
             }
             .laptop__image {
                 height: 27rem;
                 float: left;
                 transform: translateX(10rem);
+            }
+            .price {
+                padding: 1rem 4rem;
+            }
+            .cards__wrapper {
+                width: 50vw;
+            }
+            .content {
+                padding-left: 8rem;
+                padding-right: 8rem;
+            }
+        }
+
+        @media only screen and (min-width: 1800px) {
+            html {
+                font-size: 20px;
+            }
+            .content {
+                padding-left: 8rem;
+                padding-right: 8rem;
+            }
+        }
+
+        @media only screen and (min-width: 2300px) {
+            html {
+                font-size: 22px;
+            }
+            .laptop__image {
+                height: 27rem;
+                float: left;
+                transform: translateX(2rem);
+            }
+            .cards__wrapper {
+                width: 40vw;
+            }
+            .price {
+                padding: 1rem 2rem;
+            }
+            .card--sm {
+                width: 9rem;
+            }
+        }
+
+        @media only screen and (min-width: 2800px) {
+            html {
+                font-size: 28px;
+            }
+            .laptop__image {
+                height: 27rem;
+                float: left;
+                transform: translateX(-2rem);
+            }
+            .cards__wrapper {
+                width: 40vw;
+            }
+            .card--sm {
+                width: 9rem;
             }
         }
 
@@ -95,18 +220,25 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
-            /* background-color: rgb(153,50,204); */
+            background: 
+            linear-gradient(60deg, rgba(0,0,0, 0.5) 0%, rgba(0,0,0, 0) 100%),
+            linear-gradient(100deg, rgb(129,71,151) 5%, rgba(250, 250, 250, 0) 5%),
+            linear-gradient(130deg, rgba(111,67,139, 1) 70%, rgba(107,65,137, 0.8) 70%),
+            linear-gradient(20deg, rgba(87,60,126, 0.7) 40%, rgba(117,68,143, 0.6) 40%)
+            ;
             min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             color: white;
+            box-sizing: border-box;
         }
         .content {
             width: 100vw;
             max-width: 100vw;
             height: 100vh;
             max-height: 100vh;
-            overflow: hidden;
+            
             box-sizing: border-box;
             margin: 0;
             padding-top: 3rem;
@@ -120,42 +252,40 @@
             cursor: pointer;
         }
         h1 {
-            font-weight: 300;
+            font-weight: 400;
             margin: 0 auto;
             text-align: center;
             font-size: 3rem;
-            letter-spacing: .1rem;
+            letter-spacing: .2rem;
         }
         h3 {
             font-size: 2rem;
         }
         .cards__wrapper {
             margin-top: 10vh;
-            margin-left: 5vw;
             z-index: 1000;
+            box-sizing: border-box;
         }
         .cards__section {
-            width: 100%;
-            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-sizing: border-box;
         }
         .card {
             text-align: center;
             border: 7px solid white;
             border-radius: 10px;
             float: left;
-            padding: 1rem 1.5rem;
-            margin: 0 0.5rem;
+            margin: 1rem 0.5rem;
             color: white;
             background-color: #412C6F;
-        }
-        .card--lg {
-            padding: 2rem 4.5rem;
         }
         .card--lg__content {
             font-size: 1.5rem;
         }
         .card--sm {
-            width: 9rem;
             height: 7rem;
             display: flex;
             align-items: center;
@@ -163,14 +293,16 @@
         }
         .price {
             font-size: 6rem;
-            padding: 1rem 4rem;
-            display: inline-block;
+            display: block;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .laptop__wrapper {
             width: 50%;
-            height: 70%;
             position: absolute;
-            top: 11rem;
+            top: 24vh;
             right: 0;
             overflow: hidden;
             box-sizing: border-box;
@@ -180,20 +312,18 @@
             height: 27rem;
             float: right;
         }
-        .logo {
-            position: absolute;
-            bottom: 2rem;
-            left: 3rem;
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         .logo__image {
             height: 3.5rem;
         }
         .motto {
-            position: absolute;
-            bottom: 2rem;
-            right: 3rem;
             font-size: .9rem;
         }
+        
     </style>
 </head>
 <body>
@@ -207,9 +337,9 @@
             <div class="cards__section">
                 <a href="https://signup.quarklink.io/">   
                     <div class="card card--lg">
-                            <h3>Sign up today</h3>
+                        <h3>Sign up today</h3>
                         <br>
-                            <div class="card--lg__content">Free. No hidden fees</div>
+                        <div class="card--lg__content">Free. No hidden fees</div>
                     </div>
                 </a>
 
@@ -247,11 +377,13 @@
                     devices
                 </div>
             </div>
-            <div class="logo">
-                <img class="logo__image" src="https://cryptoquantique.github.io/home-page/imgs/logo-white.png" alt="Cryptoquantique">
-            </div>
-            <div class="motto">
-                Securing the connected world with zero trust​
+            <div class="footer">
+                <div class="logo">
+                    <img class="logo__image" src="https://cryptoquantique.github.io/home-page/imgs/logo-white.png" alt="Cryptoquantique">
+                </div>
+                <div class="motto">
+                    Securing the connected world with zero trust​
+                </div>
             </div>
         </div>
     </div>
