@@ -1,40 +1,260 @@
-<html>
-    <head>
-        <title>QuarkLink.io</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuarkLink</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> -->
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
 
-        <style>
-            html, body {
-                padding: 0;
-                margin: 0;
-                font-size: 30px;
-                font-family: Montserrat, sans-serif;
+    <style>
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            body {
+                background-color: yellow;
+            }
+            .laptop__wrapper {
+                display: none;
+            }
+            .cards__wrapper {
+                width: 86vw;
+                margin-right: 5vw;
+                box-sizing: border-box;
+            }
+            .card--lg {
+                width: 100%;
+            }
+
+            .card--sm {
+                width: 100%;
+                width: 12rem;
+            }
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            body {
+                background-color: blue;
+            }
+            .laptop__wrapper {
+                display: none;
+            }
+            .card--sm {
+            width: 9rem;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            body {
+                background-color: red;
+            }
+            .laptop__wrapper {
+                display: block;
+            }
+            .laptop__image {
+                height: 27rem;
+                float: left;
+                transform: translateX(30rem);
+            }
+            .card--lg {
+                padding: 2rem 2.5rem;
             }
             
-            .content {
-                width: 100%;
-                height: 100vh;
-                background: rgba(97,15,127,.9);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            body {
+                background-color: gray;
             }
-            </style>
-    </head>
 
-    <body>
-        <div class="content">
-            <img src="https://cryptoquantique.github.io/home-page/imgs/logo.png" alt="Logo" class="Logo">
-            <h3>QuarkLink</h3>
+            .card--lg {
+                padding: 2rem 4.5rem;
+            }
+            
+        }
 
-            <div>
-                <p>
-                    Welcome To QuarkLink
-                </p>
-            </div>
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+            body {
+                background-color: rgb(153,50,204);
+            }
+            .laptop__image {
+                height: 27rem;
+                float: left;
+                transform: translateX(10rem);
+            }
+        }
 
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* background-color: rgb(153,50,204); */
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .content {
+            width: 100vw;
+            max-width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
+            margin: 0;
+            padding-top: 3rem;
+        }
+        .header {
+            display: inline;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+        h1 {
+            font-weight: 300;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 3rem;
+            letter-spacing: .1rem;
+        }
+        h3 {
+            font-size: 2rem;
+        }
+        .cards__wrapper {
+            margin-top: 10vh;
+            margin-left: 5vw;
+            z-index: 1000;
+        }
+        .cards__section {
+            width: 100%;
+            height: 12rem;
+        }
+        .card {
+            text-align: center;
+            border: 7px solid white;
+            border-radius: 10px;
+            float: left;
+            padding: 1rem 1.5rem;
+            margin: 0 0.5rem;
+            color: white;
+            background-color: #412C6F;
+        }
+        .card--lg {
+            padding: 2rem 4.5rem;
+        }
+        .card--lg__content {
+            font-size: 1.5rem;
+        }
+        .card--sm {
+            width: 9rem;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .price {
+            font-size: 6rem;
+            padding: 1rem 4rem;
+            display: inline-block;
+        }
+        .laptop__wrapper {
+            width: 50%;
+            height: 70%;
+            position: absolute;
+            top: 11rem;
+            right: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+        .laptop__image {
+            height: 27rem;
+            float: right;
+        }
+        .logo {
+            position: absolute;
+            bottom: 2rem;
+            left: 3rem;
+        }
+        .logo__image {
+            height: 3.5rem;
+        }
+        .motto {
+            position: absolute;
+            bottom: 2rem;
+            right: 3rem;
+            font-size: .9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+
+        <div class="header"><h1>QuarkLink Ignite</h1>​</div>
+        <div class="laptop__wrapper">
+            <img class="laptop__image" src="imgs/laptop.png" alt="laptop">
         </div>
-    </body>
+        <div class="cards__wrapper">
+            <div class="cards__section">
+                <a href="https://signup.quarklink.io/">   
+                    <div class="card card--lg">
+                            <h3>Sign up today</h3>
+                        <br>
+                            <div class="card--lg__content">Free. No hidden fees</div>
+                    </div>
+                </a>
 
+                <div class="price">
+                    $0
+                </div>
+            </div>
+            <div class="cards__section">
+                <div class="card card--sm">
+                    Supports
+                    <br>
+                    ESP32
+                    <br>
+                    hardware
+                </div>
+                <div class="card card--sm">
+                    AWS​
+                    <br>
+                    Azure​
+                    <br>
+                    MQTT
+                </div>
+                <div class="card card--sm">
+                    Firmware
+                    <br>
+                    over-the-air
+                    <br>
+                    updates
+                </div>
+                <div class="card card--sm">
+                    Up to 50
+                    <br>
+                    connected
+                    <br>
+                    devices
+                </div>
+            </div>
+            <div class="logo">
+                <img class="logo__image" src="imgs/logo-white.png" alt="Cryptoquantique">
+            </div>
+            <div class="motto">
+                Securing the connected world with zero trust​
+            </div>
+        </div>
+    </div>
+    
+</body>
 </html>
