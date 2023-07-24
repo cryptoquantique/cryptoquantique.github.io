@@ -53,6 +53,10 @@
             html {
                 font-size: 16px;
             }
+            body {
+                overflow-x: hidden;
+            }
+            
             .laptop__wrapper {
                 display: none;
                 height: 70%;
@@ -76,7 +80,7 @@
         @media only screen and (min-width: 768px) {
             .laptop__wrapper {
                 display: block;
-                height: 100%;
+                height: calc(100% - 24vh);
             }
             .laptop__image {
                 height: 27rem;
@@ -99,9 +103,13 @@
 
         /* Large devices (laptops/desktops, 992px and up) */
         @media only screen and (min-width: 960px) {
+            body {
+                overflow: hidden;
+            }
             .content {
                 padding-left: 4rem;
                 padding-right: 4rem;
+                overflow: hidden;
             }
             .laptop__wrapper {
                 display: block;
@@ -238,10 +246,12 @@
             max-width: 100vw;
             height: 100vh;
             max-height: 100vh;
-            
+            width: 100%;
+            height: 100%;
             box-sizing: border-box;
             margin: 0;
             padding-top: 3rem;
+
         }
         .header {
             display: inline;
