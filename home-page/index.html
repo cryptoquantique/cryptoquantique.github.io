@@ -109,7 +109,6 @@
             .content {
                 padding-left: 4rem;
                 padding-right: 4rem;
-                overflow: hidden;
             }
             .laptop__wrapper {
                 display: block;
@@ -133,7 +132,6 @@
             }
             .footer {
                 padding: 2rem;
-                position: fixed;
                 bottom: 0;
                 left: 0;
                 width: 100%;
@@ -240,18 +238,18 @@
             font-family: Helvetica, Arial, sans-serif;
             color: white;
             box-sizing: border-box;
+            overflow-y: auto;
+
         }
         .content {
             width: 100vw;
             max-width: 100vw;
-            height: 100vh;
-            max-height: 100vh;
             width: 100%;
-            height: 100%;
+            height: 70%;
+            max-height: 70%;
             box-sizing: border-box;
             margin: 0;
             padding-top: 3rem;
-
         }
         .header {
             display: inline;
@@ -326,21 +324,261 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            border: 1px solid white;
         }
         .logo__image {
             height: 3.5rem;
         }
+
+        .logo__image.github {
+            height: 2rem;
+        }
+
         .motto {
             font-size: .9rem;
         }
+
+
+
+
+
+
+        .plans-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid gray;
+            border-right: 1px solid gray;
+            border-radius: 0.5rem;
+            overflow: hidden;
+
+        }
+
+        .plans-table > .cell {
+            border-left: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
         
+        .cell {
+            display: flex;
+            flex-direction: column;
+            color: #ddd;
+            font-weight: 300;
+            padding: 1rem;
+        }
+        .cell.center {
+            align-items: center;
+        }
+        .cell.cell--description {
+            background-color: rgba(150, 150, 150, 0.2);
+        }
+        .cell__title {
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+        .cell__subtitle {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .cell__price {
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+        .cell__line {
+            margin: 0.2rem 0;
+        }
+        .cell__line a {
+            text-decoration: underline;
+        }
+
+        .btn {
+            font-weight: 500;
+            padding: 0.5rem  1rem;
+            font-family: inherit;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            cursor: pointer;
+        }
+        .btn--primary {
+            color: white;
+            background-color: #7e4296;
+        }
+
+        .btn--primary:hover {
+            background-color: #68367b;
+        }
+
+        .sup {
+            vertical-align: super;
+            font-size: 1rem;
+        }
+
     </style>
 </head>
 <body>
     <div class="content">
 
-        <div class="header"><h1>QuarkLink Ignite</h1>​</div>
-        <div class="laptop__wrapper">
+        <div class="header"><h1>QuarkLink <span class="sup">TM</span> </h1>​</div>
+
+        <div class="plans-table__wrapper">
+            <div class="plans-table">
+                <div class="cell center">
+                    <div class="cell__title">Ignite</div>
+                    <div class="cell__subtitle">For small teams</div>
+                    <div class="cell__price">$0/Mo​</div>
+                    <a href="https://signup.quarklink.io/"> 
+                        <button class="btn btn--primary">Get started for free​</button>
+                    </a>
+                </div>
+                <div class="cell center">
+                    <div class="cell__title">Professional</div>
+                    <div class="cell__subtitle">For small-to-medium businesses</div>
+                    <div class="cell__price">$450/Mo</div>
+                    <a href="mailto:someone@yoursite.com">
+                        <button class="btn">Contact us​</button>
+                    </a>
+                </div>
+                <div class="cell center">
+                    <div class="cell__title">Enterprise</div>
+                    <div class="cell__subtitle">For medium-to-large enterprises</div>
+                    <div class="cell__price">Contact us for pricing</div>
+                    <a href="mailto:someone@yoursite.com">
+                        <button class="btn">Contact us​</button>
+                    </a>
+                </div>
+                <div class="cell cell--description">
+                    For engineering teams/individuals to learn about secure connectivity and test their devices.
+                </div>
+                <div class="cell cell--description">
+                    For teams that are scaling up their efforts in secure connectivity and are ready to connect more devices.
+                </div>
+                <div class="cell cell--description">
+                    Don't see something that fits? This is for large enterprise teams that want a custom-built solution to fit their needs. 
+                </div>
+
+
+
+                <div class="cell">
+                    <div class="cell__line">
+                        1 Policy​
+                    </div>
+                    <div class="cell__line">
+                        50 devices​
+                    </div>
+                    <div class="cell__line">
+                        No support (outside of documentation)​
+                    </div>
+                    <div class="cell__line">
+                        10 FOTA/month​
+                    </div>
+                    <div class="cell__line">
+                        1 Firmware Binary and key​
+                    </div>
+                    <div class="cell__line">
+                        PKI X.509 Certs, ​
+                    </div>
+                    <div class="cell__line">
+                        PKCS​
+                    </div>
+                    <div class="cell__line">
+                        Device supported hosted on <a target="_blank" href="https://github.com/cryptoquantique/cryptoquantique.github.io">GitHub​</a>
+                    </div>
+                    <div class="cell__line">
+                        HSM FIPS-140 Level1
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell__line">
+                        5 Policy​
+                    </div>
+                    <div class="cell__line">
+                        50-1000 devices​
+                    </div>
+                    <div class="cell__line">
+                        No cloud support (MQTT + Direct Database)​
+                    </div>
+                    <div class="cell__line">
+                        Limited support​
+                    </div>
+                    <div class="cell__line">
+                        50 FOTA/month​
+                    </div>
+                    <div class="cell__line">
+                        5 Firmware Binary and key​
+                    </div>
+                    <div class="cell__line">
+                        Device supported hosted on <a target="_blank" href="https://github.com/cryptoquantique/cryptoquantique.github.io">GitHub​</a>
+                    </div>
+                    <div class="cell__line">
+                        NRE available for new devices​
+                    </div>
+                    <div class="cell__line">
+                        Soft HSM​
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="cell__line">
+                        50 to unlimited policies
+                    </div>
+                    <div class="cell__line">
+                        1000+ devices​
+                    </div>
+                    <div class="cell__line">
+                        Cloud support (AWS + Azure)
+                    </div>
+                    <div class="cell__line">
+                        Full Support​
+                    </div>
+                    <div class="cell__line">
+                        Unlimited FOTA/month​
+                    </div>
+                    <div class="cell__line">
+                        Unlimited Firmware Binary and key​
+                    </div>
+                    <div class="cell__line">
+                        Device supported hosted on <a target="_blank" href="https://github.com/cryptoquantique/cryptoquantique.github.io">GitHub​</a>
+                    </div>
+                    <div class="cell__line">
+                        NRE available for new devices
+                    </div>
+                    <div class="cell__line">
+                        Thales HSM
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- <div class="footer">
+            <img class="logo__image github" src="./imgs/github-logo.svg" alt="Cryptoquantique">
+        </div> -->
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="laptop__wrapper">
             <img class="laptop__image" src="https://cryptoquantique.github.io/home-page/imgs/laptop.png" alt="laptop">
         </div>
         <div class="cards__wrapper">
@@ -389,14 +627,15 @@
             </div>
             <div class="footer">
                 <div class="logo">
-                    <img class="logo__image" src="https://cryptoquantique.github.io/home-page/imgs/logo-white.png" alt="Cryptoquantique">
+                    <a href="https://www.cryptoquantique.com/">
+                        <img class="logo__image" src="https://cryptoquantique.github.io/home-page/imgs/logo-white.png" alt="Cryptoquantique">
+                    </a>
                 </div>
                 <div class="motto">
                     Securing the connected world with zero trust​
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-    
 </body>
 </html>
