@@ -1,4 +1,4 @@
-<img src = https://github.com/cryptoquantique/cryptoquantique.github.io/blob/main/CQ_LogoV1(Purple).png width="100">
+<img src = Resources/Images/CQ_LogoV1(Purple).png width="100">
 
 Crypto Quantique is a quantum driven cybersecurity company addressing the growing challenges of end-to-end IoT security. We use the most advanced techniques in
 cryptography and quantum physics to deliver unforgeable identity key derivation technology using quantum tunneling while delivering both certificate and key 
