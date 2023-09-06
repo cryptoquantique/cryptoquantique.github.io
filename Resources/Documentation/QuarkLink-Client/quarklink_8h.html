@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CQ-doxylogo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">QuarkLink-Client
-   &#160;<span id="projectnumber">v1.3.0</span>
+   &#160;<span id="projectnumber">v1.3.2</span>
    </div>
    <div id="projectbrief">Crypto Quantique&#39;s QuarkLink-Client library</div>
   </td>
@@ -127,7 +127,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>QUARKLINK_MAX_KEY_LENGTH</b>&#160;&#160;&#160;(256)</td></tr>
 <tr class="separator:af03b1597871406486e277344f14c0c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00483969130301b758c1d5bef4aab1eb"><td class="memItemLeft" align="right" valign="top"><a id="a00483969130301b758c1d5bef4aab1eb"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>QUARKLINK_MAX_CSR_LENGTH</b>&#160;&#160;&#160;(512)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>QUARKLINK_MAX_CSR_LENGTH</b>&#160;&#160;&#160;(2048)</td></tr>
 <tr class="separator:a00483969130301b758c1d5bef4aab1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01bc0ae41c728f0247888451c7f8133a"><td class="memItemLeft" align="right" valign="top"><a id="a01bc0ae41c728f0247888451c7f8133a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>QUARKLINK_MAX_TOKEN_LENGTH</b>&#160;&#160;&#160;(650)</td></tr>
@@ -255,6 +255,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a09116724ee4a94f2ee5626cbafc17047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="quarklink_8h.html#ae5e76146826a8590b69c7eaa02587765">quarklink_return_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quarklink_8h.html#a09116724ee4a94f2ee5626cbafc17047">quarklink_deleteContext</a> (const <a class="el" href="structquarklink__context__t.html">quarklink_context_t</a> *quarklink)</td></tr>
 <tr class="memdesc:a09116724ee4a94f2ee5626cbafc17047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the QuarkLink context saved with <code><a class="el" href="quarklink_8h.html#a22606aa1fbf3f60ba2a0633664cd7019" title="Persist the current context to non-volatile storage.">quarklink_persistContext()</a></code>.  <a href="quarklink_8h.html#a09116724ee4a94f2ee5626cbafc17047">More...</a><br /></td></tr>
 <tr class="separator:a09116724ee4a94f2ee5626cbafc17047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef33fe5b148d8f9483a807628a56547c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c">quarklink_isDeviceEnrolled</a> ()</td></tr>
+<tr class="memdesc:aef33fe5b148d8f9483a807628a56547c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the device is currently enrolled.  <a href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c">More...</a><br /></td></tr>
+<tr class="separator:aef33fe5b148d8f9483a807628a56547c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4802ddc91a704bf3232df8c500d95c2e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e">quarklink_isDeviceNotEnrolled</a> ()</td></tr>
+<tr class="memdesc:a4802ddc91a704bf3232df8c500d95c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the device is currently not enrolled.  <a href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e">More...</a><br /></td></tr>
+<tr class="separator:a4802ddc91a704bf3232df8c500d95c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77cfce2145cbd284d0d8de8415861f85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85">quarklink_isDeviceRevoked</a> ()</td></tr>
+<tr class="memdesc:a77cfce2145cbd284d0d8de8415861f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the device is currently revoked.  <a href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85">More...</a><br /></td></tr>
+<tr class="separator:a77cfce2145cbd284d0d8de8415861f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1651425af0ea44258af46b69ca102dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd">quarklink_isDevicePendingRevoke</a> ()</td></tr>
+<tr class="memdesc:af1651425af0ea44258af46b69ca102dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the device is currently pending on a revoke.  <a href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd">More...</a><br /></td></tr>
+<tr class="separator:af1651425af0ea44258af46b69ca102dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e32d7139490fb9e3645fc654b720ba9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quarklink_8h.html#a5e32d7139490fb9e3645fc654b720ba9">quarklink_isDeviceCertificateExpired</a> ()</td></tr>
+<tr class="memdesc:a5e32d7139490fb9e3645fc654b720ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the device certificate is expired.  <a href="quarklink_8h.html#a5e32d7139490fb9e3645fc654b720ba9">More...</a><br /></td></tr>
+<tr class="separator:a5e32d7139490fb9e3645fc654b720ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b955b93d262c47f865e7fbdd0ec6bf0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quarklink_8h.html#a2b955b93d262c47f865e7fbdd0ec6bf0">quarklink_isDeviceFwUpdateAvailable</a> ()</td></tr>
+<tr class="memdesc:a2b955b93d262c47f865e7fbdd0ec6bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a firmware update available for the device.  <a href="quarklink_8h.html#a2b955b93d262c47f865e7fbdd0ec6bf0">More...</a><br /></td></tr>
+<tr class="separator:a2b955b93d262c47f865e7fbdd0ec6bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -1386,6 +1404,138 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aef33fe5b148d8f9483a807628a56547c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef33fe5b148d8f9483a807628a56547c">&#9670;&nbsp;</a></span>quarklink_isDeviceEnrolled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int quarklink_isDeviceEnrolled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the device is currently enrolled. </p>
+<p>This function needs to be called after <code><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status()</a></code>, in order to have an up-to-date device status. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code><a class="el" href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c" title="Check if the device is currently enrolled.">quarklink_isDeviceEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e" title="Check if the device is currently not enrolled.">quarklink_isDeviceNotEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85" title="Check if the device is currently revoked.">quarklink_isDeviceRevoked()</a></code> and <code><a class="el" href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd" title="Check if the device is currently pending on a revoke.">quarklink_isDevicePendingRevoke()</a></code> are mutually exclusive, meaning only one of these can be true at the same time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if true, 0 if false </dd></dl>
+
+</div>
+</div>
+<a id="a4802ddc91a704bf3232df8c500d95c2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4802ddc91a704bf3232df8c500d95c2e">&#9670;&nbsp;</a></span>quarklink_isDeviceNotEnrolled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int quarklink_isDeviceNotEnrolled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the device is currently not enrolled. </p>
+<p>This function needs to be called after <code><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status()</a></code>, in order to have an up-to-date device status. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code><a class="el" href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c" title="Check if the device is currently enrolled.">quarklink_isDeviceEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e" title="Check if the device is currently not enrolled.">quarklink_isDeviceNotEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85" title="Check if the device is currently revoked.">quarklink_isDeviceRevoked()</a></code> and <code><a class="el" href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd" title="Check if the device is currently pending on a revoke.">quarklink_isDevicePendingRevoke()</a></code> are mutually exclusive, meaning only one of these can be true at the same time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if true, 0 if false </dd></dl>
+
+</div>
+</div>
+<a id="a77cfce2145cbd284d0d8de8415861f85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77cfce2145cbd284d0d8de8415861f85">&#9670;&nbsp;</a></span>quarklink_isDeviceRevoked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int quarklink_isDeviceRevoked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the device is currently revoked. </p>
+<p>This function needs to be called after <code><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status()</a></code>, in order to have an up-to-date device status. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code><a class="el" href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c" title="Check if the device is currently enrolled.">quarklink_isDeviceEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e" title="Check if the device is currently not enrolled.">quarklink_isDeviceNotEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85" title="Check if the device is currently revoked.">quarklink_isDeviceRevoked()</a></code> and <code><a class="el" href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd" title="Check if the device is currently pending on a revoke.">quarklink_isDevicePendingRevoke()</a></code> are mutually exclusive, meaning only one of these can be true at the same time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if true, 0 if false </dd></dl>
+
+</div>
+</div>
+<a id="af1651425af0ea44258af46b69ca102dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1651425af0ea44258af46b69ca102dd">&#9670;&nbsp;</a></span>quarklink_isDevicePendingRevoke()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int quarklink_isDevicePendingRevoke </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the device is currently pending on a revoke. </p>
+<p>This function needs to be called after <code><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status()</a></code>, in order to have an up-to-date device status. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code><a class="el" href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c" title="Check if the device is currently enrolled.">quarklink_isDeviceEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e" title="Check if the device is currently not enrolled.">quarklink_isDeviceNotEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85" title="Check if the device is currently revoked.">quarklink_isDeviceRevoked()</a></code> and <code><a class="el" href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd" title="Check if the device is currently pending on a revoke.">quarklink_isDevicePendingRevoke()</a></code> are mutually exclusive, meaning only one of these can be true at the same time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if true, 0 if false </dd></dl>
+
+</div>
+</div>
+<a id="a5e32d7139490fb9e3645fc654b720ba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e32d7139490fb9e3645fc654b720ba9">&#9670;&nbsp;</a></span>quarklink_isDeviceCertificateExpired()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int quarklink_isDeviceCertificateExpired </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the device certificate is expired. </p>
+<p>This function needs to be called after <code><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status()</a></code>, in order to have an up-to-date device status. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code><a class="el" href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c" title="Check if the device is currently enrolled.">quarklink_isDeviceEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e" title="Check if the device is currently not enrolled.">quarklink_isDeviceNotEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85" title="Check if the device is currently revoked.">quarklink_isDeviceRevoked()</a></code> and <code><a class="el" href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd" title="Check if the device is currently pending on a revoke.">quarklink_isDevicePendingRevoke()</a></code> are mutually exclusive, meaning only one of these can be true at the same time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if true, 0 if false </dd></dl>
+
+</div>
+</div>
+<a id="a2b955b93d262c47f865e7fbdd0ec6bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b955b93d262c47f865e7fbdd0ec6bf0">&#9670;&nbsp;</a></span>quarklink_isDeviceFwUpdateAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int quarklink_isDeviceFwUpdateAvailable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if there is a firmware update available for the device. </p>
+<p>This function needs to be called after <code><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status()</a></code>, in order to have an up-to-date device status. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="quarklink_8h.html#aa72ed2b91511441affb50609f6f95bef" title="Request the current status of the device to Quarklink.">quarklink_status</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code><a class="el" href="quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c" title="Check if the device is currently enrolled.">quarklink_isDeviceEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e" title="Check if the device is currently not enrolled.">quarklink_isDeviceNotEnrolled()</a></code>, <code><a class="el" href="quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85" title="Check if the device is currently revoked.">quarklink_isDeviceRevoked()</a></code> and <code><a class="el" href="quarklink_8h.html#af1651425af0ea44258af46b69ca102dd" title="Check if the device is currently pending on a revoke.">quarklink_isDevicePendingRevoke()</a></code> are mutually exclusive, meaning only one of these can be true at the same time.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if true, 0 if false </dd></dl>
 
 </div>
 </div>

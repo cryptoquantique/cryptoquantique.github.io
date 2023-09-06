@@ -61,5 +61,11 @@ var quarklink_8h =
     [ "quarklink_loadStoredContext", "quarklink_8h.html#acfc9c10b212f8dbb9abe27967b85e72c", null ],
     [ "quarklink_deleteEnrolmentContext", "quarklink_8h.html#af75178cc7aa2f4905f05b55f1c1df917", null ],
     [ "quarklink_deleteContext", "quarklink_8h.html#a09116724ee4a94f2ee5626cbafc17047", null ],
+    [ "quarklink_isDeviceEnrolled", "quarklink_8h.html#aef33fe5b148d8f9483a807628a56547c", null ],
+    [ "quarklink_isDeviceNotEnrolled", "quarklink_8h.html#a4802ddc91a704bf3232df8c500d95c2e", null ],
+    [ "quarklink_isDeviceRevoked", "quarklink_8h.html#a77cfce2145cbd284d0d8de8415861f85", null ],
+    [ "quarklink_isDevicePendingRevoke", "quarklink_8h.html#af1651425af0ea44258af46b69ca102dd", null ],
+    [ "quarklink_isDeviceCertificateExpired", "quarklink_8h.html#a5e32d7139490fb9e3645fc654b720ba9", null ],
+    [ "quarklink_isDeviceFwUpdateAvailable", "quarklink_8h.html#a2b955b93d262c47f865e7fbdd0ec6bf0", null ],
     [ "QUARKLINK_VERSION", "quarklink_8h.html#a254eaa04d8e75ad9270522d8c5a3478b", null ]
 ];
