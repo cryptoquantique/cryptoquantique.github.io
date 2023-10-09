@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scopeid_46',['scopeID',['../structquarklink__context__t.html#a7dd9e787dcdc3a385983c610bed19842',1,'quarklink_context_t']]]
+  ['keysize_35',['keySize',['../structDS__DATA__ctx__t.html#a8f871ab46f8b469403161ddc86439093',1,'DS_DATA_ctx_t']]]
 ];

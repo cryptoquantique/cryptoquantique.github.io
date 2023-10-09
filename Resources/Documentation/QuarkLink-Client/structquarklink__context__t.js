@@ -5,7 +5,7 @@ var structquarklink__context__t =
     [ "endpoint", "structquarklink__context__t.html#a1e7cfdf057e7ab77736a46b9c1dd9085", null ],
     [ "port", "structquarklink__context__t.html#a8e0798404bf2cf5dabb84c5ba9a4f236", null ],
     [ "deviceID", "structquarklink__context__t.html#a0a284633e10c9ceb104bd2e8578edea1", null ],
-    [ "deviceCert", "structquarklink__context__t.html#a2e392cf9d86351a263c7249a8fc2255b", null ],
+    [ "deviceCert", "structquarklink__context__t.html#ad7677c7e4b015b823bc7200b9792f068", null ],
     [ "token", "structquarklink__context__t.html#af9e1373f861aa4f45519636301458aef", null ],
     [ "uri", "structquarklink__context__t.html#aae647fd86f7d87bcbd91baf86e89f6d4", null ],
     [ "database", "structquarklink__context__t.html#a1493d76809e9178a23cbc1432efdb8ce", null ],

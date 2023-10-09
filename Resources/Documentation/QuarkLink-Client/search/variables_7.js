@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scopeid_93',['scopeID',['../structquarklink__context__t.html#a7dd9e787dcdc3a385983c610bed19842',1,'quarklink_context_t']]]
+  ['rootcert_242',['rootCert',['../structquarklink__context__t.html#a50a9948cdfcb51b67fcf3d493561fea2',1,'quarklink_context_t']]]
 ];

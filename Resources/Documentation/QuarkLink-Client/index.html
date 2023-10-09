@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="CQ-doxylogo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">QuarkLink-Client
-   &#160;<span id="projectnumber">v1.3.2</span>
+   &#160;<span id="projectnumber">v1.4.0</span>
    </div>
    <div id="projectbrief">Crypto Quantique&#39;s QuarkLink-Client library</div>
   </td>
@@ -88,38 +88,108 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">QuarkLink Client </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public"></a>QuarkLink Client is a C library that implements the core functionalities of QuarkLink, to provide the user with an easy way to <em>enroll</em> to quickly and safely obtain the information needed to connect to their prefered IoT Hub. <br  />
+<div class="textblock"><p><a class="anchor" id="md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README"></a> QuarkLink Client is a C library that implements the core functionalities of QuarkLink, to provide the user with an easy way to <em>enroll</em> to quickly and safely obtain the information needed to connect to their prefered IoT Hub. <br  />
  This way the user can spend more time designing their application without focusing too much on connecting to the backend services.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Release</h1>
+<p>To release a new version of the library, simply tag the relevant commit, being careful to follow the correct format:</p><ul>
+<li><b>Official Release</b> <br  />
+<ul>
+<li>Tag with "vX.Y.Z" with X, Y, Z being digits, and nothing appeneded after the last digit. This will trigger the pipeline to generate both the <a href="#documentation">internal and public documentation</a>. Make sure to include the updates as part of the <em>release notes</em>, in order to make it appear among the project releases.</li>
+<li>Tag with "vX.Y.Z-*" for an internal release only. This will only trigger the pipeline that generates the internal documentation.</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Description</h1>
-<p>QuarkLink Client provides end-users with a library that is ready-to-use on specific platforms, so that all is needed is a few API calls.</p>
+<p>The aim of the library is twofold: on one hand, it is to help the (embedded) developers to quickly enable QuarkLink on a new platform (board), without the need to re-implement the whole ecosystem from scratch; on the other hand, it is to provide end-users with a library that is ready-to-use on specific platforms, so that all they need to do is a few API calls.</p>
 <p>The flow of a QuarkLink based application is represented in the flowchart below:</p>
 <p><img src="quarklink_end-user_flowchart.png" alt="" class="inline" title="QuarkLink end-user flowchart"/></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Getting Started</h1>
-<p>The library is ready to be used and comes as a pre-compiled binary for a variety of platforms, that the developer can use within their project.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Supported Platforms</h2>
-<p>Currently supported platforms can be found in the <a href="https://github.com/cryptoquantique/quarklink-binaries/tree/main/quarklink-client">quarklink-client-binaries</a> repository.</p>
-<p>In order to implement a QuarkLink application the user needs a QuarkLink instance, whose details are needed to initialise the QuarkLink context. A QuarkLink instance comes in the form of a url such as <em>cryptoquantique.quarklink.io</em> and more information on how to obtain one can be found on <a href="https://www.cryptoquantique.com/products/quarklink/">our website</a>.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Environment Setup</h2>
-<p>By selecting the appropriate binary, the environment (i.e. what platform and what crypto module to use) is pre-configured. <br  />
- The user only needs to include <em><a class="el" href="quarklink_8h.html" title="Where the QuarkLink magic happens.">quarklink.h</a></em> to be able to use all the QuarkLink APIs. <br  />
+<p>Because of the different nature of the two different types of targeted audience, this is split in two dinstict sections:</p><ul>
+<li><a href="#for-developers">for developers</a></li>
+<li><a href="#for-end-users">for end-users</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+For Developers</h2>
+<p>The aim of a developer is to <b>expand QuarkLink's support for a new platform</b> rather than using the library.</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
+Pre-requisites</h3>
+<p>To integrate QuarkLink on a new platform, the developer will need to be able to carry out the following with the desired platform:</p><ul>
+<li>HTTPS POST requests</li>
+<li>File read/write/delete operations</li>
+<li>Over-the-air firmware update</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md14"></a>
+Environment Setup</h3>
+<p>There are two main locations that the developer will need to operate in order to update the QuarkLink library to support the new platform:</p><ul>
+<li>The file <em><a class="el" href="ql__config_8h.html" title="QuarkLink&#39;s configuration file.">ql_config.h</a></em> <br  />
+ This file contains a list of supported platform, in the form of macros. The developer will need to add the new platform to the list along the same line as the others (<code>#define QL_PLATFORM_&lt;PLATFORM-NAME&gt;</code>).</li>
+<li>The directory <em>platform_specific</em> <br  />
+ This directory contains the implementation of all the functions that are specific to a platform. The developer can use the file <em><a class="el" href="ql__platform_8h.html" title="Collection of all the platform-specific functions.">ql_platform.h</a></em> as a reference for the functions that need to be implemented, as well as the other files in the same directory. <br  />
+ The developer will need to create a new file, named after the new platform and containing the specific implementations.</li>
+<li>[Optional] The file <em>ql_crypto_*.c</em> <br  />
+ If the new platform is provided with a secure element and the developer decides to use it, they will need to implement the functionalities declared in <em><a class="el" href="ql__crypto_8h.html" title="Contains all the functions related to the crypto environment/technology used.">ql_crypto.h</a></em> and <em><a class="el" href="ql__csr_8h.html" title="Certificate Signing Request utilities.">ql_csr.h</a></em>. <br  />
+ In particular, the developer will need to implement the following functions: <br  />
+<ul>
+<li><code><a class="el" href="ql__crypto_8h.html#ad0243b465948d49b425fbda70522c707" title="Initialise the crypto environment.">cryptoInit()</a></code></li>
+<li><code><a class="el" href="ql__crypto_8h.html#a0b944ab0961afa33d5c7b5847529dd0e" title="Retrieve the stored ESK.">getESK()</a></code></li>
+<li><code><a class="el" href="ql__crypto_8h.html#a6ea4da52ebaa413c8d5d648034ec24d2" title="Retrieve the stored DSK.">getDSK()</a></code></li>
+<li><code><a class="el" href="ql__crypto_8h.html#a6dc3dd9c3dde3f4477933aec04e9dc61" title="Generate a new DSK.">newDSK()</a></code></li>
+<li><code><a class="el" href="ql__crypto_8h.html#af9fdcdc9bf8538eefa0eb0cc8ef0f307" title="Converts a public key to DER format.">publicKeyToDER()</a></code></li>
+<li><code><a class="el" href="ql__csr_8h.html#a38f7c82d4831ed28d231ea34bf80e04f" title="Create a PEM formatted CSR, for the specified key and with the commonName field set.">makeCSR()</a></code> <br  />
+ The developer is required to create a new file called <em>ql_crypto_&lt;secure-element&gt;.c</em> where the implementation of the above functions needs to be.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md15"></a>
+Hardware Setup</h3>
+<p>Hardware setup is specific to the new platform.</p>
+<h3><a class="anchor" id="autotoc_md16"></a>
+Building</h3>
+<p>This project comes as a platformio project. The developer is welcome to add new tests that are specific to the new platform, to make sure all the QuarkLink API calls are performing correctly. <br  />
+ The test in <em>aws_test.h</em> uses the M5Stack Core2 (ESP32 board) and can serve as example.</p>
+<p>To correctly build the project, the developer will need to create a new project for the board they are developing for and add the updated QuarkLink library to it. It should then be as easy as adding a main that includes <em><a class="el" href="quarklink_8h.html" title="Where the QuarkLink magic happens.">quarklink.h</a></em> and makes use of the QuarkLink API functions.</p>
+<h3><a class="anchor" id="autotoc_md17"></a>
+Programming</h3>
+<p>Flashing the program is specific to the board used.</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+For End-Users</h2>
+<p>The aim of an end-user is to <b>use QuarkLink</b> and shouldn't require any modification to the library.</p>
+<h3><a class="anchor" id="autotoc_md19"></a>
+Pre-requisites</h3>
+<p>The platform the user intends to use needs to be supported (supported platforms are available in <em><a class="el" href="ql__config_8h.html" title="QuarkLink&#39;s configuration file.">ql_config.h</a></em>).</p>
+<p>In order to implement a QuarkLink application the user needs a QuarkLink instance, whose details are needed to initialise the QuarkLink context.</p>
+<h3><a class="anchor" id="autotoc_md20"></a>
+Environment Setup</h3>
+<p>The user is able to configure the environment via the <em><a class="el" href="ql__config_8h.html" title="QuarkLink&#39;s configuration file.">ql_config.h</a></em> file, specifically via the two flags: <code>QL_ACTIVE_PLATFORM</code> and <code>QL_ACTIVE_CRYPTO</code>, which define what current hardware and crypto technology to use for the project (make sure to choose values from the supported technologies listed in the same file). <br  />
+ These macros should be defined at build time as directives (e.g <code>-D QL_ACTIVE_PLATFORM=QL_PLATFORM_ESP32</code> <code>-D QL_ACTIVE_CRYPTO=QL_CRYPTO_MBEDTLS</code>).</p>
+<p>The user only needs to include <em><a class="el" href="quarklink_8h.html" title="Where the QuarkLink magic happens.">quarklink.h</a></em> to be able to use all the QuarkLink APIs. Additionally, the user can decide to include <em><a class="el" href="ql__config_8h.html" title="QuarkLink&#39;s configuration file.">ql_config.h</a></em> to have access to QuarkLink's specific defines and log functions. The program should follow a similar structure as the one represented in the <a href="#description">flowchart above</a>. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Application Setup</h2>
-<p>The QuarkLink application should follow a similar structure as the one represented in the <a href="#description">flowchart above</a>. <br  />
- To use the quarklink-client library, the user first needs to define a <code><a class="el" href="structquarklink__context__t.html" title="Quarklink context.">quarklink_context_t</a></code> variable, that is used to hold all the resources needed for the application. <br  />
- The structure needs to be initialised by a call to <code><a class="el" href="quarklink_8h.html#a1ed7e9639c0c20cdc9cf8c7b5a2a981b" title="Initialise the Quarklink environment.">quarklink_init()</a></code>, after which it will be possible to use all the other APIs, as indicated in the documentation. <br  />
+<h3><a class="anchor" id="autotoc_md21"></a>
+Hardware Setup</h3>
+<p>Hardware setup is specific to the platform chosen.</p>
+<h3><a class="anchor" id="autotoc_md22"></a>
+Building</h3>
+<p>The user needs to define a main that takes care of defining a <code><a class="el" href="structquarklink__context__t.html" title="Quarklink context.">quarklink_context_t</a></code> variable, used to hold all the resources needed for the application. <br  />
+ The structure needs to be initialised by a call to <code>quarklink_init(...)</code>, after which some of the resources will be available to access, as indicated in the documentation. <br  />
+ To obtain the IoT Hub information and the device certificate, a call to <code>quarklink_enrol(...)</code> is needed.</p>
+<p>Build as a normal C/C++ application.</p>
+<h3><a class="anchor" id="autotoc_md23"></a>
+Programming</h3>
+<p>Flashing the program is specific to the board used.</p>
+<h1><a class="anchor" id="autotoc_md24"></a>
+Documentation</h1>
+<p>Documentation can be generated using <a href="https://doxygen.nl/manual/doxygen_usage.html">Doxygen</a>. <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Programming</h2>
-<p>Flashing the program is specific to the board used and the user is trusted to know how to perform this step.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Example</h2>
-<p>Example code is available at our <a href="https://github.com/cryptoquantique">QuarkLink getting started page</a>. </p>
-</div></div><!-- PageDoc -->
+<p>When tagging a new version, the pipelines automatically generate an updated version of the documentation, available to download as an artifact. There are two version of the documentation:</p><ul>
+<li><b>Internal:</b> covers all the files and uses <a class="el" href="index.html#md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README">this README</a> as the home page.</li>
+<li><b>Public:</b> only covers the publicly available APIs (i.e. <a href="./src/quarklink.h">quarklink.h</a>) and has a specifically <a class="el" href="md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html">public README</a> as the home page.</li>
+</ul>
+<p>It can also be generated manually, from terminal: </p><div class="fragment"><div class="line">$ cd doxygen</div>
+<div class="line">$ doxygen config.doxyfile</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

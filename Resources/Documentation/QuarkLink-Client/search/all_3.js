@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['iothubendpoint_6',['iotHubEndpoint',['../structquarklink__context__t.html#a6f3bdbeacc07e1bf6d9d871ba51bf15e',1,'quarklink_context_t']]],
-  ['iothubport_7',['iotHubPort',['../structquarklink__context__t.html#a63386b903e8b59bb4beaf55546654742',1,'quarklink_context_t']]],
-  ['iothubrootcert_8',['iotHubRootCert',['../structquarklink__context__t.html#a76e986a8a8ec7e0b707bb4f9078ae13d',1,'quarklink_context_t']]]
+  ['efuse_5fid_20',['efuse_id',['../structDS__DATA__ctx__t.html#a5f83482d055cbbeff380a0ce6d01f425',1,'DS_DATA_ctx_t']]],
+  ['encrypted_5fds_21',['encrypted_ds',['../structDS__DATA__ctx__t.html#ae0ea5c6c262c4fb1ff0a3e4f7ae7bece',1,'DS_DATA_ctx_t']]],
+  ['endpoint_22',['endpoint',['../structquarklink__context__t.html#a1e7cfdf057e7ab77736a46b9c1dd9085',1,'quarklink_context_t']]]
 ];
