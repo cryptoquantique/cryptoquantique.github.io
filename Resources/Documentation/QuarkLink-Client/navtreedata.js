@@ -26,34 +26,13 @@ var NAVTREE =
 [
   [ "QuarkLink-Client", "index.html", [
     [ "QuarkLink Client", "index.html", [
-      [ "Release", "index.html#autotoc_md9", null ],
-      [ "Description", "index.html#autotoc_md10", null ],
-      [ "Getting Started", "index.html#autotoc_md11", [
-        [ "For Developers", "index.html#autotoc_md12", [
-          [ "Pre-requisites", "index.html#autotoc_md13", null ],
-          [ "Environment Setup", "index.html#autotoc_md14", null ],
-          [ "Hardware Setup", "index.html#autotoc_md15", null ],
-          [ "Building", "index.html#autotoc_md16", null ],
-          [ "Programming", "index.html#autotoc_md17", null ]
-        ] ],
-        [ "For End-Users", "index.html#autotoc_md18", [
-          [ "Pre-requisites", "index.html#autotoc_md19", null ],
-          [ "Environment Setup", "index.html#autotoc_md20", null ],
-          [ "Hardware Setup", "index.html#autotoc_md21", null ],
-          [ "Building", "index.html#autotoc_md22", null ],
-          [ "Programming", "index.html#autotoc_md23", null ]
-        ] ]
-      ] ],
-      [ "Documentation", "index.html#autotoc_md24", null ]
-    ] ],
-    [ "QuarkLink Client", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html", [
-      [ "Description", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html#autotoc_md1", null ],
-      [ "Getting Started", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html#autotoc_md2", [
-        [ "Supported Platforms", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html#autotoc_md3", null ],
-        [ "Environment Setup", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html#autotoc_md4", null ],
-        [ "Application Setup", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html#autotoc_md5", null ],
-        [ "Programming", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html#autotoc_md6", null ],
-        [ "Example", "md__home_gitlab_runner_builds_NzW2R_Hg_0_firmware_development_quarklink_client_README_public.html#autotoc_md7", null ]
+      [ "Description", "index.html#autotoc_md1", null ],
+      [ "Getting Started", "index.html#autotoc_md2", [
+        [ "Supported Platforms", "index.html#autotoc_md3", null ],
+        [ "Environment Setup", "index.html#autotoc_md4", null ],
+        [ "Application Setup", "index.html#autotoc_md5", null ],
+        [ "Programming", "index.html#autotoc_md6", null ],
+        [ "Example", "index.html#autotoc_md7", null ]
       ] ]
     ] ],
     [ "Data Structures", "annotated.html", [
@@ -79,8 +58,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"structsha256.html#a0f574c8e0c3bb5fd6c5c4eaf441c85fb"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

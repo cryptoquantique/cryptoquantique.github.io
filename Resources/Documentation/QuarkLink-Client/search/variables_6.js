@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quarklink_5fversion_241',['QUARKLINK_VERSION',['../quarklink_8h.html#a254eaa04d8e75ad9270522d8c5a3478b',1,'quarklink.c']]]
+  ['rootcert_92',['rootCert',['../structquarklink__context__t.html#a50a9948cdfcb51b67fcf3d493561fea2',1,'quarklink_context_t']]]
 ];
